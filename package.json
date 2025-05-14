@@ -1,0 +1,17 @@
+{
+  "name": "my-api-tests",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test:api": "cypress run --spec \"cypress/e2e/api/*.spec.js\"",
+    "cy:open": "cypress open"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.0.0",
+    "chai-json-schema": "^1.5.1",
+    "cypress": "^14.3.3",
+    "cypress-mochawesome-reporter": "^3.1.5",
+    "dotenv": "^16.0.3",
+    "mochawesome": "^7.1.3"
+  }
+}

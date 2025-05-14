@@ -1,0 +1,36 @@
+name: CI – Cypress API Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  cypress-api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Rodar testes Cypress
+        uses: cypress-io/github-action@v5
+        with:
+          browser: electron
+          headless: true
+          record: false
+          spec: cypress/e2e/api/users.spec.js
+
+      - name: Upload relatórios
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-reports
+          path: cypress/reports
