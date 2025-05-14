@@ -5,7 +5,7 @@ Suite de testes automatizados de API desenvolvida para a empresa **Aarin Tech-Fi
 > **Autor:** Bruno Furquim  
 > **Data:** 2025
 
-![CI](https://img.shields.io/badge/ci-passing-brightgreen)
+[![CI – Cypress API Tests](https://github.com/bruno-furquim/aarin-api-tests/actions/workflows/ci.yml/badge.svg)](https://github.com/bruno-furquim/aarin-api-tests/actions/workflows/ci.yml)
 
 ## Sobre o Projeto
 
