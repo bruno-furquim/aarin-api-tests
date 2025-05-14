@@ -1,4 +1,4 @@
-# AARIN API TESTS
+# **Aarin Tech-Fin**
 
 Suite de testes automatizados de API desenvolvida para a empresa **Aarin Tech-Fin**.
 
