@@ -3,7 +3,7 @@ require('dotenv').config()
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: process.env.BASE_URL,
+    baseUrl: process.env.BASE_URL || 'https://reqres.in/api',
     supportFile: 'cypress/support/e2e.js',
     defaultCommandTimeout: 8000,
     reporter: 'cypress-mochawesome-reporter',
@@ -14,7 +14,7 @@ module.exports = defineConfig({
       json: true
     },
     env: {
-      apiKey: process.env.API_KEY
+      apiKey: process.env.API_KEY || 'reqres-free-v1'
     },
     retries: {
       runMode: 2,

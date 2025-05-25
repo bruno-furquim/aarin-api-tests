@@ -11,10 +11,12 @@ describe('🚀 API Users @reqres', () => {
 
   it('POST /users — deve criar usuário com sucesso', () => {
     cy.fixture('createUserPayload').then((payload) => {
-      payload.name = faker.person.firstName()
-      payload.job  = faker.person.jobTitle()
+      // Garante que o payload original não seja alterado globalmente
+      const userPayload = { ...payload }
+      userPayload.name = faker.person.firstName()
+      userPayload.job  = faker.person.jobTitle()
 
-      cy.createUser(payload).then((res) => {
+      cy.createUser(userPayload).then((res) => {
         expect(res.status).to.eq(201)
         expect(res.requestHeaders).to.include({
           'x-api-key': Cypress.env('apiKey')

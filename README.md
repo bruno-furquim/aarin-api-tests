@@ -38,6 +38,11 @@ Este repositório contém uma suíte de testes de API utilizando o Cypress, com 
   ```
   Abre a interface gráfica do Cypress para execução e depuração dos testes.
 
+- **Executar um teste específico**
+  ```bash
+  npx cypress run --spec "cypress/e2e/api/users.spec.js"
+  ```
+
 ## Relatórios
 
 Após a execução dos testes, os relatórios em HTML estarão disponíveis em `cypress/reports/*.html`.
