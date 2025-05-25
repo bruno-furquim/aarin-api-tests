@@ -56,4 +56,17 @@ describe('🚀 API Users @reqres', () => {
       expect(res.body).to.have.property('error', 'Missing API key.')
     })
   })
+
+  it('POST /users com x-api-key inválido — retorna 401 Invalid API key', () => {
+    cy.request({
+      method: 'POST',
+      url: '/users',
+      body: { name: 'X', job: 'Y' },
+      failOnStatusCode: false,
+      headers: { 'x-api-key': 'invalid-key' }
+    }).then((res) => {
+      expect(res.status).to.eq(401)
+      expect(res.body).to.have.property('error', 'Invalid API key.')
+    })
+  })
 })
